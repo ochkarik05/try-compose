@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.example.trycompose.ui.utils.TryComposeTheme
+import com.example.trycompose.ui.widgets.greetings.Greeting
 
 class MainActivity : AppCompatActivity() {
     @ExperimentalMaterialApi
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             TryComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    LifecycleDemo()
+                    Greeting(name = "User")
                 }
             }
         }
