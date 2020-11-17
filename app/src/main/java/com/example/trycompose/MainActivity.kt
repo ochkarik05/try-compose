@@ -1,20 +1,13 @@
 package com.example.trycompose
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.example.trycompose.ui.utils.TryComposeTheme
-import com.example.trycompose.ui.widgets.content.ScreenContent
-import com.example.trycompose.ui.widgets.greetings.Greeting
-import com.example.trycompose.ui.widgets.layouts.LayoutsCodelab
 import com.example.trycompose.ui.widgets.main.Main
+import com.example.trycompose.ui.widgets.nav.NestedNavCompose
 
 class MainActivity : AppCompatActivity() {
     @ExperimentalMaterialApi
@@ -23,18 +16,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<ComposeView>(R.id.composeView).setContent {
             Main {
-                LayoutsCodelab()
+                NestedNavCompose()
             }
         }
     }
 }
 
 
-@ExperimentalMaterialApi
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    Main {
-        LayoutsCodelab()
-    }
-}
